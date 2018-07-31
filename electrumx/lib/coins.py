@@ -1978,3 +1978,24 @@ class Minexcoin(MinexcoinMixin, Coin):
         'elex01-ams.turinex.eu s t',
         'eu.minexpool.nl s t'
     ]
+
+class EBoost(Coin):
+    NAME = "eBoost"
+    SHORTNAME = "EBST"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    P2PKH_VERBYTE = bytes.fromhex("5c") # Pubkey Address
+    P2SH_VERBYTES = [bytes.fromhex("0a"), bytes.fromhex("05")] # ScriptAddress2, ScriptAddress
+    WIF_BYTE = bytes.fromhex("dc")  # Secret Key
+    GENESIS_HASH = ('21938e71a19f0053f1ea9d2c616feba7'
+                    'c767ade95a20946f26747ae96aaa572b')
+    DESERIALIZER = lib_tx.DeserializerSegWit
+    TX_COUNT = 892191
+    TX_COUNT_HEIGHT = 878260
+    TX_PER_BLOCK = 10
+    RPC_PORT = 9874
+    REORG_LIMIT = 800
+    PEERS = [
+    ]
+
